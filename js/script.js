@@ -913,6 +913,16 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   mainSubnavHover();
   ;
 
+  var sandwich = function sandwich() {
+    $(document.body).on('click', '.mobile-nav__header', function () {
+      var $self = $(this);
+      $self.toggleClass('sandwich--active');
+    });
+  };
+
+  sandwich();
+  ;
+
   var openSearchForm = function openSearchForm() {
     $(document).on('click', '.search__icon', function () {
       var $searchWrapper = $(this).parent();
@@ -986,28 +996,48 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   var productPrevSlider = function productPrevSlider() {
     $('.js-product-prev__slider').each(function (idx) {
-      var carouselId = 'carousel' + idx;
-      this.closest('.product-prev').id = carouselId;
+      var productPrevSliderClass = "product-prev-slider-" + idx;
+      this.closest('.product-prev').classList.add(productPrevSliderClass);
       $(this).slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         fade: true,
+        swipe: false,
+        infinite: false,
         arrows: false,
         dots: true,
-        appendDots: '#' + carouselId + ' .product-prev__colors',
+        appendDots: '.' + productPrevSliderClass + ' .product-prev__colors',
         customPaging: function customPaging(slider, i) {
           setAttr();
           var color = $(slider.$slides[i]).data('color');
-          return '<span class="product-prev__color" style="background-color: ' + color + '"></span>';
+          return '<span class="product-prev__color" style="background-color:' + color + '"></span>';
         }
       });
     });
   };
 
   var productLineSlider = function productLineSlider() {
-    $('.js-products-line-slider').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1
+    $('.js-products-line-slider').each(function (idx) {
+      var productsLineSliderID = 'products-line-slider-' + idx;
+      this.closest('.products-line-slider').id = productsLineSliderID;
+      $(this).slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: false,
+        prevArrow: '#' + productsLineSliderID + ' .products-line-slider__btn--prev',
+        nextArrow: '#' + productsLineSliderID + ' .products-line-slider__btn--next',
+        dots: true,
+        appendDots: '#' + productsLineSliderID + ' .products-line-slider__dots',
+        responsive: [{
+          breakpoint: 1139,
+          settings: {
+            slidesToShow: 3,
+            customPaging: function customPaging() {
+              return '<span class="products-line-slider__dot"></span>';
+            }
+          }
+        }]
+      });
     });
   };
 
