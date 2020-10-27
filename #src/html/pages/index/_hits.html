@@ -1,0 +1,24 @@
+<section class="s-hits">
+	<div class="container">
+		<h2 class="title-section">Хиты продаж</h2>
+		<div class="hits tabs">
+			<ul class="tabs-navigation hits-navigation">
+				<li data-tab="tab-hits" class="hits-navigation__item tabs-navigation__item tabs-navigation__item--active">
+					Хиты продаж</li>
+				<li data-tab="tab-benefits" class="hits-navigation__item tabs-navigation__item">Выгодно</li>
+				<li data-tab="tab-new" class="hits-navigation__item tabs-navigation__item">Новинки</li>
+			</ul>
+			<div class="tabs__body hits__body">
+				<div class="tab tab-hits tab--active">
+					@@include('hits/_hits.html')
+				</div>
+				<div class="tab tab-benefits">
+					@@include('hits/_benefits.html')
+				</div>
+				<div class="tab tab-new">
+					@@include('hits/_new.html')
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

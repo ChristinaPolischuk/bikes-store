@@ -1,0 +1,21 @@
+.mobile-nav {
+	&__header {
+		cursor: pointer;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: $accent_color;
+		color: $white;
+		& > * {
+			margin-right: 20px;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	&__title {
+		font-size: 16px;
+		font-weight: 600;
+	}
+}

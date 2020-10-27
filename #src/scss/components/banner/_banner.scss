@@ -1,0 +1,102 @@
+.s-banner {
+	padding-bottom: 0;
+}
+
+.banner {
+	height: 300px;
+	padding: 0 90px;
+	position: relative;
+	background-image: linear-gradient(255deg, $accent_color_light, $accent_color);
+	border-radius: 4px;
+	overflow: hidden;
+	&__navigation {
+		@include size(50px);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		margin-top: -25px;
+		background-color: rgba($white, 0.2);
+		border-radius: 50%;
+		cursor: pointer;
+		transition: background-color 0.3s;
+		&:hover {
+			background-color: rgba($white, 0.5);
+			.banner__navigation-icon {
+				transform: scale(1.5);
+			}
+		}
+		&.banner__navigation--prev {
+			left: 30px;
+		}
+		&.banner__navigation--next {
+			right: 30px;
+		}
+		&-icon {
+			width: 10px;
+			height: 17px;
+			fill: rgba($black, 0.5);
+			transition: transform 0.3s;
+		}
+	}
+	&__dots {
+		position: absolute;
+		z-index: 2;
+		left: 50%;
+		bottom: 20px;
+		transform: translateX(-50%);
+		.slick-dots {
+			display: flex;
+			li {
+				margin-right: 10px;
+				&:last-child {
+					margin-right: 0;
+				}
+				&.slick-active {
+					.banner__dot {
+						background-color: $white;
+					}
+				}
+			}
+		}
+	}
+	&__dot {
+		cursor: pointer;
+		@include size(10px);
+		display: block;
+		border-radius: 10px;
+		background-color: rgba(38, 38, 38, 0.3);
+	}
+	&__item {
+		outline: none;
+	}
+	&__content {
+		padding: 30px 0;
+		display: flex;
+	}
+	&__body {
+		flex: 1;
+		color: $white;
+	}
+	&__title {
+		margin-bottom: 15px;
+		font-size: 50px;
+		line-height: 1;
+	}
+	&__descr {
+		margin-bottom: 40px;
+		font-size: 18px;
+		line-height: 1.67;
+	}
+	&__img {
+		max-width: 100%;
+		max-height: 240px;
+		&-wrapper {
+			flex: 0 0 40%;
+			width: 40%;
+			text-align: center;
+		}
+	}
+}

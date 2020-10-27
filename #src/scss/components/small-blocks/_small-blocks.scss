@@ -1,0 +1,158 @@
+.logo {
+	&__img {
+		width: 150px;
+		height: 22px;
+	}
+}
+
+.advantages {
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	background-color: $porcelain;
+	border-radius: 4px;
+	@media screen and(max-width: $tablet_size) {
+		padding: 20px 40px;
+		justify-content: space-between;
+	}
+}
+
+.advantage {
+	display: flex;
+	align-items: center;
+	margin-right: 180px;
+	@media screen and(max-width: $tablet_size) {
+		flex-direction: column;
+		margin-right: 0;
+		text-align: center;
+	}
+	&:last-child {
+		margin-right: 0;
+	}
+	&__icon {
+		margin-right: 20px;
+		@include size(50px);
+		fill: $dusty_gray;
+		@media screen and(max-width: $tablet_size) {
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
+	}
+	&__body {
+		display: flex;
+		flex-direction: column;
+	}
+	&__title {
+		margin-bottom: 5px;
+		font-size: 18px;
+		font-weight: 400;
+	}
+	&__descr {
+		font-size: 12px;
+		color: $mid_gray;
+	}
+}
+
+.s-light-bg {
+	background-color: $porcelain;
+}
+
+.text {
+	line-height: 1.79;
+}
+
+.about {
+	display: flex;
+	@media screen and (max-width: $tablet_size) {
+		flex-direction: column;
+	}
+	& > * {
+		margin-right: 30px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	&__body {
+		flex: 1;
+		@media screen and (max-width: $tablet_size) {
+			order: 2;
+		}
+		.tab {
+			& > * {
+				margin: 15px 0;
+			}
+		}
+	}
+	&-navigation {
+		flex: 0 0 255px;
+		width: 255px;
+		@media screen and (max-width: $tablet_size) {
+			display: flex;
+			order: 1;
+			flex: 1;
+			width: 100%;
+			margin-bottom: 15px;
+		}
+		&__item {
+			padding-left: 10px;
+			height: 50px;
+			line-height: 48px;
+			border-bottom: 2px solid $alto;
+			@media screen and (max-width: $tablet_size) {
+				margin-right: 30px;
+				padding-left: 0;
+				flex: 1;
+			}
+			&:last-child {
+				@media screen and (max-width: $tablet_size) {
+					margin-right: 0;
+				}
+			}
+			&.tabs-navigation__item--active {
+				border-bottom-color: $accent_color;
+			}
+		}
+	}
+}
+
+.sandwich {
+	cursor: pointer;
+	height: 16px;
+	position: relative;
+	width: 20px;
+	&__line {
+		background-color: $white;
+		display: block;
+		height: 2px;
+		left: 0;
+		position: absolute;
+		-webkit-transition: all linear 0.4s;
+		-o-transition: all linear 0.4s;
+		transition: all linear 0.4s;
+		width: 100%;
+		&--top {
+			top: 0;
+		}
+		&--middle {
+			top: 7px;
+		}
+		&--bottom {
+			top: 14px;
+		}
+	}
+	&--active {
+		.sandwich__line {
+			&--top {
+				top: 10px;
+				transform: rotate(45deg);
+			}
+			&--middle {
+				opacity: 0;
+			}
+			&--bottom {
+				top: 10px;
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}
