@@ -1,0 +1,41 @@
+.inform-nav {
+	background-color: $athens_gray;
+	&.inform-nav--col {
+		padding: 15px 0;
+		.inform-nav {
+			&__list {
+				align-items: flex-start;
+				flex-direction: column;
+			}
+			&__item {
+				margin-right: 0;
+				margin-bottom: 10px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			&__link {
+				padding: 0 15px;
+			}
+		}
+	}
+	&__list {
+		display: flex;
+		align-items: center;
+	}
+	&__item {
+		margin-right: 30px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	&__link {
+		font-size: 12px;
+		line-height: 1.67;
+		color: $tundora;
+		transition: color 0.2s;
+		&:hover {
+			color: $accent_color;
+		}
+	}
+}

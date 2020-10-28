@@ -3,7 +3,7 @@
 (function () {
 	@@include("scripts/components/_preloader.js");
 	@@include("scripts/components/_polyfill-ie11.js");
-	@@include("scripts/components/_main-subnav-hover.js");
+	@@include("scripts/components/_catalog.js");
 	@@include("scripts/components/_sandwich.js");
 	@@include("scripts/components/_search-form.js");
 	@@include("scripts/components/_banner-slider.js");
