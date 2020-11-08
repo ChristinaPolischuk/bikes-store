@@ -925,16 +925,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   mobileMenu();
   ;
 
-  var sandwich = function sandwich() {
-    $(document.body).on('click', '.mobile-nav__header', function () {
-      var $self = $(this);
-      $self.toggleClass('sandwich--active');
-    });
-  };
-
-  sandwich();
-  ;
-
   var openSearchForm = function openSearchForm() {
     $(document).on('click', '.search__icon', function () {
       var $searchWrapper = $(this).parent();
@@ -968,7 +958,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       customPaging: function customPaging(slider, i) {
         return '<a class="banner__dot" href="#"></a>';
       },
-      appendDots: '.banner__dots'
+      appendDots: '.banner__dots',
+      responsive: [{
+        breakpoint: 767,
+        settings: {
+          arrows: false
+        }
+      }]
     });
   };
 
@@ -1040,13 +1036,23 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         nextArrow: '#' + productsLineSliderID + ' .products-line-slider__btn--next',
         dots: true,
         appendDots: '#' + productsLineSliderID + ' .products-line-slider__dots',
+        customPaging: function customPaging() {
+          return '<span class="products-line-slider__dot"></span>';
+        },
         responsive: [{
           breakpoint: 1139,
           settings: {
-            slidesToShow: 3,
-            customPaging: function customPaging() {
-              return '<span class="products-line-slider__dot"></span>';
-            }
+            slidesToShow: 3
+          }
+        }, {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2
+          }
+        }, {
+          breakpoint: 550,
+          settings: {
+            slidesToShow: 1
           }
         }]
       });
