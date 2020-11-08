@@ -12,8 +12,29 @@
 		justify-content: center;
 		background-color: $accent_color;
 		color: $white;
+		@media screen and(max-width: $phone_size) {
+			margin-right: 15px;
+			@include size(50px);
+			background-color: $white;
+			border-right: 1px solid rgba(78, 78, 78, 0.2);
+			.sandwich {
+				&__line {
+					background-color: $tundora;
+				}
+			}
+		}
+		.mobile-menu {
+			&__title {
+				@media screen and(max-width: $phone_size) {
+					display: none;
+				}
+			}
+		}
 		& > * {
 			margin-right: 20px;
+			@media screen and(max-width: $phone_size_small) {
+				margin-right: 0;
+			}
 			&:last-child {
 				margin-right: 0;
 			}

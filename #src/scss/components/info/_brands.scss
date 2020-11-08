@@ -11,6 +11,11 @@
 			}
 		}
 		&.brands__list--small {
+			@media screen and(max-width: $phone_size) {
+				margin-right: -15px;
+				flex-wrap: nowrap;
+				overflow: auto;
+			}
 			& > * {
 				//у каждого третьего
 				&:nth-child(3n + 3) {

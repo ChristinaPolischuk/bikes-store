@@ -1,7 +1,18 @@
 .logo {
 	&__img {
-		width: 150px;
 		height: 22px;
+		@media screen and(max-width: $phone_size) {
+			height: 16px;
+		}
+	}
+}
+
+.mobile {
+	&__logo {
+		display: none;
+		@media screen and(max-width: $phone_size) {
+			display: block;
+		}
 	}
 }
 
@@ -15,6 +26,12 @@
 		padding: 20px 40px;
 		justify-content: space-between;
 	}
+	@media screen and(max-width: $phone_size) {
+		flex-direction: column;
+		padding: 20px;
+		justify-content: flex-start;
+		align-items: flex-start;
+	}
 }
 
 .advantage {
@@ -26,8 +43,16 @@
 		margin-right: 0;
 		text-align: center;
 	}
+	@media screen and(max-width: $phone_size) {
+		margin-bottom: 10px;
+		flex-direction: row;
+		text-align: left;
+	}
 	&:last-child {
 		margin-right: 0;
+		@media screen and(max-width: $phone_size) {
+			margin-bottom: 0;
+		}
 	}
 	&__icon {
 		margin-right: 20px;
@@ -36,6 +61,10 @@
 		@media screen and(max-width: $tablet_size) {
 			margin-right: 0;
 			margin-bottom: 10px;
+		}
+		@media screen and(max-width: $phone_size) {
+			margin-right: 10px;
+			margin-bottom: 0;
 		}
 	}
 	&__body {
@@ -86,6 +115,9 @@
 	&-navigation {
 		flex: 0 0 255px;
 		width: 255px;
+		@media screen and (max-width: $tablet_size) {
+			overflow: auto;
+		}
 		@media screen and (max-width: $tablet_size) {
 			display: flex;
 			order: 1;
@@ -138,21 +170,6 @@
 		}
 		&--bottom {
 			top: 14px;
-		}
-	}
-	&--active {
-		.sandwich__line {
-			&--top {
-				top: 10px;
-				transform: rotate(45deg);
-			}
-			&--middle {
-				opacity: 0;
-			}
-			&--bottom {
-				top: 10px;
-				transform: rotate(-45deg);
-			}
 		}
 	}
 }

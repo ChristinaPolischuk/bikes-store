@@ -1,5 +1,11 @@
 .s-banner {
 	padding-bottom: 0;
+	@media screen and(max-width: $phone_size) {
+		padding-top: 0;
+	}
+	.container {
+		padding: 0;
+	}
 }
 
 .banner {
@@ -9,6 +15,13 @@
 	background-image: linear-gradient(255deg, $accent_color_light, $accent_color);
 	border-radius: 4px;
 	overflow: hidden;
+	@media screen and(max-width: $tablet_size) {
+		border-radius: 0;
+	}
+	@media screen and(max-width: $phone_size) {
+		padding: 0 15px;
+		height: 200px;
+	}
 	&__navigation {
 		@include size(50px);
 		display: flex;
@@ -27,6 +40,9 @@
 			.banner__navigation-icon {
 				transform: scale(1.5);
 			}
+		}
+		@media screen and(max-width: $phone_size) {
+			display: none;
 		}
 		&.banner__navigation--prev {
 			left: 30px;
@@ -47,6 +63,9 @@
 		left: 50%;
 		bottom: 20px;
 		transform: translateX(-50%);
+		@media screen and(max-width: $phone_size) {
+			bottom: 10px;
+		}
 		.slick-dots {
 			display: flex;
 			li {
@@ -75,28 +94,47 @@
 	&__content {
 		padding: 30px 0;
 		display: flex;
+		justify-content: space-between;
 	}
 	&__body {
 		flex: 1;
 		color: $white;
+		@media screen and(max-width: $phone_size) {
+			max-width: 48%;
+		}
+		.btn {
+			@media screen and(max-width: $phone_size) {
+				display: none;
+			}
+		}
 	}
 	&__title {
 		margin-bottom: 15px;
 		font-size: 50px;
 		line-height: 1;
+		@media screen and(max-width: $phone_size) {
+			font-size: 30px;
+		}
 	}
 	&__descr {
 		margin-bottom: 40px;
 		font-size: 18px;
 		line-height: 1.67;
+		@media screen and(max-width: $phone_size) {
+			font-size: 12px;
+		}
 	}
 	&__img {
 		max-width: 100%;
 		max-height: 240px;
 		&-wrapper {
-			flex: 0 0 40%;
-			width: 40%;
+			flex: 0 0 45%;
+			width: 45%;
 			text-align: center;
+			@media screen and(max-width: $phone_size) {
+				flex: 0 0 49%;
+				width: 49%;
+			}
 		}
 	}
 }

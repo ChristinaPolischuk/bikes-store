@@ -8,7 +8,15 @@ let bannerSlider = () => {
 		customPaging: function (slider, i) {
 			return '<a class="banner__dot" href="#"></a>';
 		},
-		appendDots: '.banner__dots'
+		appendDots: '.banner__dots',
+		responsive: [
+			{
+				breakpoint: 767,
+				settings: {
+					arrows: false
+				}
+			}
+		]
 	});
 }
 

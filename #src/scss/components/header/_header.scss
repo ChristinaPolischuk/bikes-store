@@ -22,6 +22,9 @@
 	}
 	&__main {
 		padding: 25px 0;
+		@media screen and(max-width: $phone_size) {
+			display: none;
+		}
 	}
 	&__logo {
 		margin-right: 40px;

@@ -1,17 +1,33 @@
-.header {
-	&__mobile {
-		display: none;
-		position: relative;
-		@media screen and(max-width: $tablet_size) {
-			display: block;
+.header__mobile {
+	display: none;
+	position: relative;
+	@media screen and(max-width: $tablet_size) {
+		display: block;
+	}
+	.container {
+		@media screen and(max-width: $phone_size) {
+			padding: 0;
 		}
-		&-inner {
-			display: flex;
-			justify-content: space-between;
-			& > * {
-				flex: 0 0 48%;
-				width: 48%;
+	}
+	&-inner {
+		display: flex;
+		justify-content: space-between;
+		@media screen and(max-width: $phone_size) {
+			justify-content: flex-start;
+			align-items: center;
+		}
+		& > * {
+			flex: 0 0 48%;
+			width: 48%;
+			@media screen and(max-width: $phone_size) {
+				flex: 0 0 auto;
+				width: auto;
 			}
+		}
+	}
+	.search {
+		@media screen and(max-width: $phone_size) {
+			display: none;
 		}
 	}
 }

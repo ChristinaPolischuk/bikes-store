@@ -45,14 +45,27 @@ let productLineSlider = function () {
 			nextArrow: '#' + productsLineSliderID + ' .products-line-slider__btn--next',
 			dots: true,
 			appendDots: '#' + productsLineSliderID + ' .products-line-slider__dots',
+			customPaging: function () {
+				return '<span class="products-line-slider__dot"></span>';
+			},
 			responsive: [
 				{
 					breakpoint: 1139,
 					settings: {
 						slidesToShow: 3,
-						customPaging: function () {
-							return '<span class="products-line-slider__dot"></span>';
-						}
+
+					}
+				},
+				{
+					breakpoint: 767,
+					settings: {
+						slidesToShow: 2
+					}
+				},
+				{
+					breakpoint: 550,
+					settings: {
+						slidesToShow: 1
 					}
 				}
 			]
